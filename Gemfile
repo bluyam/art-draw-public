@@ -88,7 +88,6 @@ gem 'omniauth-facebook'
 
 group :production do
   gem 'pg'
-  gem 'rails'
 end
 
 group :development, :test do
