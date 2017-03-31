@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 20170311224912) do
     t.integer  "opponent_id"
     t.boolean  "active"
     t.string   "title"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
     t.text     "clickX"
     t.text     "clickY"
-    t.text     "clickColor"
     t.text     "clickDrag"
+    t.text     "clickColor"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "challenge_name"
   end
 
