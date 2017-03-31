@@ -1,0 +1,144 @@
+<style>
+  @media (max-width: 768px) {
+    body {
+      background-color: #9edeff;
+    }
+    
+    .item {
+      height: 280px;
+      text-align: center;
+    }
+    
+    .col-cust {
+      width: 100%;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grow { transition: all .2s ease-in-out; }
+    .grow:hover { transform: scale(1.1); }
+    
+    .item {
+      height: 300px;
+    }
+    
+    .col-cust {
+      width: 25%;
+    }
+  }
+  
+  .turn {
+    color: #3a3a3a;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+  
+
+  
+  h1 {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  
+  .title {
+    color: #363636;
+    padding-top: 5px;
+  }
+  
+  .title:hover {
+    text-decoration: none;
+  }
+  
+  .caption {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  img {
+    max-height: 148px;
+  }
+  
+  .thumbnail {
+    height: 250px;
+    border-style: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
+  
+  .thumbnail:hover {
+    text-decoration: none;
+  }
+
+</style>
+<h1 style="text-align: center;"><%=current_user.username%>'s Games</h1>
+
+<Meta property = "wb: webmaster" content = "97aef6dd6cb5b971" />
+
+<div class="container">
+  <div class="row list-group">
+<table>
+  <tbody>
+    <div class="item col-xs-3 col-lg-3 col-cust grid-group-item">
+    <%= link_to new_game_path do %>
+    <div class="thumbnail grow">
+      <div class="title">new game</div>
+      <%=image_tag("new_pencil.png")%>
+      <div class="caption"></div>
+    </div>
+    <% end %>
+  </div>
+    <% @games.each do |game| %>
+      <% if current_user.id == game.opponent_id  and game.active and game.title == " "%> 
+      <div class="item col-xs-3 col-lg-3 col-cust grid-group-item">
+      <%= link_to edit_game_path(game) do %>
+        <div class="thumbnail grow">
+        <div class="title"><%= "#{game.title}" %></div>
+        <%=image_tag("drawing_placeholder.png")%>
+        <div class="caption"> 
+      <div class="turn"><%= "Your turn" %></div>
+      <%= link_to 'Finish', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </div>
+      </div>
+      </div>
+    <%elsif  current_user.id == game.challenger_id and game.active and game.title == " " %>
+      <div class="item  col-xs-3 col-lg-3 col-cust grid-group-item">
+
+      <%= link_to game do %>
+        <div class="thumbnail grow">
+        <div class="title"><%= "#{game.title} " %></span></div>
+        <%=image_tag("drawing_placeholder.png")%>
+        <div class="caption"> 
+      <div class="turn"><%= "#{game.challenge_name}'s turn" %></div>
+      <%= link_to 'Finish', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </div>
+      </div>
+      </div>
+    <%elsif  current_user.id == game.challenger_id and game.active%>
+       <div class="item  col-xs-3 col-lg-3 col-cust grid-group-item">
+      <%= link_to game do %>
+        <div class="thumbnail grow">
+        <div class="title"><%= "#{game.title} " %></span></div>
+        <%=image_tag("drawing_placeholder.png")%>
+        <div class="caption"> 
+      <div class="turn"><%= "#{game.challenge_name}'s creation" %></div>
+      <%= link_to 'New Game', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </div>
+      </div>
+      </div>
+    <%end%>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+<br>
+
+

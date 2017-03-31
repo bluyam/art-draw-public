@@ -1,0 +1,62 @@
+<style>
+h1 {
+  padding-bottom: 20px;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+</style>
+
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="workspace-container">
+    <h1><%= @game.title %></h1>
+    <div id="canvasDiv"></div>
+    <div id="toolbar">
+        <div style="display: none" class="color" id="1"></div>
+        <div style="display: none" class="color" id="2"></div>
+        <div style="display: none" class="color" id="3"></div>
+        <div style="display: none" class="color" id="4"></div>
+        <div style="display: none" class="color" id="5"></div>
+        <div style="display: none" class="color" id="6"></div>
+        <!-- input type="range" id="stroke" -->
+    </div>
+  </div>
+  
+  <div class="submission">
+  
+    <div class="field">
+      <%= f.hidden_field :active%>
+    </div>
+  
+    <div class="field">
+      <%= f.hidden_field :clickX %>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickY %>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickDrag %>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickColor %>
+    </div>
+
+  </div>
+      
+<% end %>
+

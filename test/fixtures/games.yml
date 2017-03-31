@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  challenger_id: 
+  opponent_id: 
+  active: false
+  canvas_state: 
+  title: MyString
+
+two:
+  challenger_id: 
+  opponent_id: 
+  active: false
+  canvas_state: 
+  title: MyString

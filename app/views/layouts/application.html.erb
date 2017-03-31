@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Patrick+Hand|Lobster'%>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<Meta property = "wb: webmaster" content = "97aef6dd6cb5b971" />
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%if current_user.present?%>
+       <%= link_to image_tag("artdraw_logo_placeholder.jpg", :id=>"logo"), games_url %>
+      <%elsif%>
+      <%= link_to image_tag("artdraw_logo_placeholder.jpg", :id=>"logo"), user_session_url %>
+      <%end%>
+      </div>
+      <div id="navbar1" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <% if current_user.present?%>
+           <li><%= link_to "Games", games_path %></li>
+           <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+           <%elsif%>
+           <li><%= link_to "Sign in", new_user_session_path %></li>
+           <li><%= link_to "Sign up", new_user_registration_path %></li>
+           <%end%>
+          <li id="search-bar">
+          <%= form_tag("/games/archive", method: "get")  do %>
+          <%= text_field_tag :search %>
+          <% end %></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+
+<%= yield %>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<style>
+h1 {
+  padding-bottom: 20px;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+</style>
+
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="workspace-container">
+    <div id="canvasDiv"></div>
+    <div id="toolbar">
+        <div class="color" id="1"></div>
+        <div class="color" id="2"></div>
+        <div class="color" id="3"></div>
+        <div class="color" id="4"></div>
+        <div class="color" id="5"></div>
+        <div class="color eraser" id="6"></div>
+        <div class="button" id="undo"></div>
+        <div class="button" id="clear"></div>
+        <div class="button" id="facebook"></div>
+        <div class="button" id="weibo"></div>
+        <!-- input type="range" id="stroke" -->
+    </div>
+  </div>
+  
+  <div class="submission">
+    <div class="field">
+      <%= f.hidden_field :challenger_id, value: current_user.id %>
+    </div>
+  
+    <div class="field">
+     
+      <%= f.text_field :challenge_name, placeholder: " Who are you challenging?", value: @challenge_name %>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :active, value: true%>
+    </div>
+  
+    <div class="field">
+      <%= f.hidden_field :title, value: " "%>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickX%>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickY%>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickDrag%>
+    </div>
+    
+    <div class="field">
+      <%= f.hidden_field :clickColor%>
+    </div>
+    
+    <div class="actions" >
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
+

@@ -1,0 +1,35 @@
+<style>
+  body {
+    background: #ffffff;
+  }
+</style>
+<Meta property = "wb: webmaster" content = "97aef6dd6cb5b971" />
+
+<div class="center jumbotron">
+  <h1>
+    <% if current_user.present?%>
+      <%# TODO: redirect to game page %>
+       Welcome  <%=current_user.username%>
+      <%= link_to games_url do %>
+      <div id="new">Play Now!</div>
+      <% end %>
+    <% else %>
+       <%=image_tag("artdraw_logo_placeholder.png", :id=>"big-logo")%>
+       <h3>Create awesome doodles with your friends. For free.</h3>
+       <%= link_to new_user_session_url do %>
+       <input type="submit" value="Play Now">
+       <% end %>
+    <% end %>
+  </h1>
+</div>
+<div class="center jumbotron" style="background-color: #9edeff">
+  <%= image_tag("how.png", :id=>"how") %>
+  <%= image_tag("doodles.png", :id=>"doodle") %>
+  <h3>Your friend sends you an image, then you transform it using our drawing canvas.</h3> 
+  <h3>Surprise your friends with your ingenuity by getting creative. Join the digital paint party.</h3>
+</div>
+<div id="footer">
+  <div class="container">
+    <p class="text-muted" style="text-align: center; margin-bottom: 35px;">Copyright 2017 <a href="http://www.amindforall.com">A Mind for All</a></p>
+  </div>
+</div>

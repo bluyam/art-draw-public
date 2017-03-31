@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: 
+  clickX: MyText
+  clickY: MyText
+  clickDrag: MyText
+  clickColor: MyText
+
+two:
+  game_id: 
+  clickX: MyText
+  clickY: MyText
+  clickDrag: MyText
+  clickColor: MyText

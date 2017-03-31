@@ -1,0 +1,200 @@
+// Place all the styles related to the Game controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.color:hover {
+    opacity: 0.8;
+}
+
+#search-bar {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#search {
+    font-size: 8pt;
+    height: 10px;
+    margin-top: 12px;
+    // border: 2px #7e7e7e solid;
+    // border-radius: 8px;
+    background-color: lightgrey;
+}
+
+#search-icon {
+    height: 27px;
+    margin-top: 11px;
+}
+
+.color {
+    width: 55px;
+    height: 55px;
+    margin: 10px;
+    float: left;
+    border: 4px #ffffff solid;
+    border-radius: 50px;
+}
+
+#undo {
+    background-image: url(undo.png);
+}
+
+#clear {
+    background-image: url(clear.png);
+}
+
+#download {
+    background-image: url(download.png);    
+}
+
+#facebook {
+    background-image: url(facebook.png);
+}
+
+#weibo {
+    background-image: url(weibo.png);    
+}
+
+.eraser {
+    background-image: url(eraser.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+#grid {
+    margin-top: 200px;
+}
+
+@media (max-width: 768px) {
+    
+body {
+    background-color: #9edeff;
+}
+
+.submission {
+    padding-top: 0px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.button {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    float: left;
+    border-radius: 50px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+#toolbar {
+    padding: 15px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.color {
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    float: left;
+    border: 4px #ffffff solid;
+    border-radius: 50px;
+}
+    
+#canvasDiv {
+    margin: 0 auto;
+    width: 275px;
+    height: 275px;
+    background-color: white;
+}
+
+canvas {
+    width: 275px;
+    height: 275px;
+}
+
+#workspace-container {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+}
+
+@media (min-width: 768px) {
+    
+.submission {
+    padding-top: 20px;
+    width: 750px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+    
+.button {
+    width: 55px;
+    height: 55px;
+    margin: 10px;
+    float: left;
+    border-radius: 50px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+    
+#toolbar {
+    width: 175px;
+    height: 500px;
+    float: right;
+    background-color: transparent;
+}
+
+.color {
+    width: 55px;
+    height: 55px;
+    margin: 10px;
+    float: left;
+    border: 4px #ffffff solid;
+    border-radius: 50px;
+}
+    
+#canvasDiv {
+    width: 500px;
+    height: 500px;
+    float: left;
+    background-color: white;
+}
+
+canvas {
+    width: 500px;
+    height: 500px;
+}
+    
+#workspace-container {
+    width: 750px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #9edeff;
+}    
+
+}
+
+.title {
+    font-size: 24px;
+    text-align: center;
+}
