@@ -40,27 +40,27 @@
 }
 
 #undo {
-    background-image: url(undo.png);
+    background-image: image-url('undo.png');
 }
 
 #clear {
-    background-image: url(clear.png);
+    background-image: image-url('clear.png');
 }
 
 #download {
-    background-image: url(download.png);    
+    background-image: image-url('download.png');    
 }
 
 #facebook {
-    background-image: url(facebook.png);
+    background-image: image-url('facebook.png');
 }
 
 #weibo {
-    background-image: url(weibo.png);    
+    background-image: image-url('weibo.png');    
 }
 
 .eraser {
-    background-image: url(eraser.png);
+    background-image: image-url('eraser.png');
     background-color: white;
     background-repeat: no-repeat;
     background-position: center;
