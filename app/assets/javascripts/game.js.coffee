@@ -216,5 +216,4 @@ ready = ->
 exceedsSmallSquareBounds = (e) ->
   e > 275
   
-$(document).ready(ready)
-$(document).on('page:load', ready);
+$(document).on('turbolinks:load', ready);
