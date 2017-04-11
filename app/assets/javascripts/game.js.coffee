@@ -177,11 +177,6 @@ ready = ->
     link.href = canvas.toDataURL('image/png')
     link.click()
     return
-  $('#facebook').mousedown (e) ->
-    FB.ui {
-      method: 'share'
-      href: 'https://art-draw-web-bluyam.c9.io/welcome/index'
-    }, (response) ->
   paint = undefined
   
   if document.getElementById("game_clickX").value != ""

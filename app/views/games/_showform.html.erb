@@ -8,7 +8,35 @@ h1 {
   padding-right: 10px;
 }
 </style>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '215671282136073',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+  
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
+function fbShare() {
+  FB.ui({
+  app_id:  215671282136073,
+  method: 'share',
+  href: window.location.href,
+  }, function(response){});
+}
+
+
+</script>
 <%= form_for(@game) do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
@@ -30,7 +58,8 @@ h1 {
         <div style="display: none" class="color" id="4"></div>
         <div style="display: none" class="color" id="5"></div>
         <div style="display: none" class="color" id="6"></div>
-        <!-- input type="range" id="stroke" -->
+        <div class="button" id="facebook" onclick="fbShare()"></div>
+        <!--<div class="button" id="weibo"></div>-->
     </div>
   </div>
   
