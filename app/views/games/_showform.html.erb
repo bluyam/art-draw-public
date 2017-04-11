@@ -32,7 +32,9 @@ function fbShare() {
   app_id:  215671282136073,
   method: 'share',
   href: window.location.href,
-  }, function(response){});
+  }, function(response){
+    window.close();
+  });
 }
 
 
