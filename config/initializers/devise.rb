@@ -253,6 +253,7 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
+  config.omniauth :weibo, "3148275279", "Fc09c87a3435650b9bd5c57c02ad4a16"
   # config.warden do |manager|
   #   manager.intercept_401 = false
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
