@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, 
          :authentication_keys => [:login],
-         :omniauth_providers =>[:facebook,:weibo]
+         :omniauth_providers =>[:facebook]
 
          
          

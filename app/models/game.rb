@@ -21,7 +21,7 @@ class Game < ActiveRecord::Base
   
   def self.search(search)
     if search
-      self.all.where({:challenge_name => ["field LIKE ?", "#{search}%"]})
+      self.all.where({:challenge_name => search})
     else
       self.nil
     end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'page/about'
 
   get 'page/contact'
+  # get '/:code' => 'users#weibo'
+  
   # trying to do facebook stuff
   # devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   # devise_for :users #What I had before 

@@ -14,7 +14,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
     
     def weibo
-      omniauth_process
+      print "##################"
+      # omniauth_process
     end
     
     protected
@@ -25,7 +26,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if authentication
         set_flash_message(:notice, :signed_in)
         sign_in(:user, authentication.user)
-        redirect_to root_path
+        redirect_to games_path
       elsif current_user
         authentication = Authentication.create_from_hash(current_user.id, omniauth)
         set_flash_message(:notice, :add_provider_success)

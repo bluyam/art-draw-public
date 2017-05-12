@@ -88,7 +88,7 @@ Devise.setup do |config|
   # avoid CSRF token fixation attacks. This means that, when using AJAX
   # requests for sign in and sign up, you need to get a new CSRF token
   # from the server. You can disable this option at your own risk.
-  # config.clean_up_csrf_token_on_authentication = true
+  config.clean_up_csrf_token_on_authentication = false
 
   # When false, Devise will not attempt to reload routes on eager load.
   # This can reduce the time taken to boot the app but if your application
@@ -253,7 +253,9 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  config.omniauth :weibo, "3148275279", "Fc09c87a3435650b9bd5c57c02ad4a16"
+  # config.omniauth :weibo, "3644929465", "2f46ecedb9b9865af6ed4965c261657e", provider_ignores_state: true
+  config.omniauth :weibo, "3148275279", "fc09c87a3435650b9bd5c57c02ad4a16",{redirect_uri: "http://art-draw-public-bluyam.c9users.io/users/auth/weibo/callback" }
+# end
   # config.warden do |manager|
   #   manager.intercept_401 = false
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
