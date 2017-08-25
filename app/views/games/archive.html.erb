@@ -47,8 +47,8 @@
 </style>
 <div class="container">
 
-<%if @test != nil%>
-    <% @test.each do |game| %>
+<%if @search_games != nil%>
+    <% @search_games.each do |game| %>
     <%if !game.active%>
       <div class="item col-xs-3 col-lg-3 col-cust grid-group-item">
       <%= link_to game do %>
@@ -56,16 +56,14 @@
         <div class="title"><%= "#{game.title}" %></div>
         <%=image_tag("drawing_placeholder.png")%>
         <div class="caption"> 
-      
       <% end %>
        <% end %>
       </div>
       </div>
       </div>
     <%end%>
-   
 <%end%>
-<%if @test.size == 0 %>
+<%if @search_games.size == 0 %>
    <h3 style="margin-left: 0px; padding-top: 10px; padding-bottom: 10px">Hmm, we couldn't find any games for that query.</h3>
 <%end%>
 </div>

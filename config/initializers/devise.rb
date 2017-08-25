@@ -253,8 +253,6 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  # config.omniauth :weibo, "3644929465", "2f46ecedb9b9865af6ed4965c261657e", provider_ignores_state: true
-  config.omniauth :weibo, "3148275279", "fc09c87a3435650b9bd5c57c02ad4a16",{redirect_uri: "http://art-draw-public-bluyam.c9users.io/users/auth/weibo/callback" }
 # end
   # config.warden do |manager|
   #   manager.intercept_401 = false

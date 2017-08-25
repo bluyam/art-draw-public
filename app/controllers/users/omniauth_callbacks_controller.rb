@@ -13,11 +13,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       end
     end
     
-    def weibo
-      print "##################"
-      # omniauth_process
-    end
-    
     protected
     def omniauth_process
       omniauth = request.env['omniauth.auth']
@@ -41,8 +36,4 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def after_omniauth_failure_path_for(scope)
       new_user_registration_path
     end
-
-    # def failure
-    #   redirect_to root_path
-    # end
 end

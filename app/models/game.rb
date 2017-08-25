@@ -23,7 +23,7 @@ class Game < ActiveRecord::Base
     if search
       self.all.where({:challenge_name => search})
     else
-      self.nil
+      self.all
     end
   end
   

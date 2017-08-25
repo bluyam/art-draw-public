@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.0.beta2'
-###### asdfasndjk
+###### 
 gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -28,11 +28,6 @@ gem 'bootstrap-sass', '3.2.0'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-weibo-oauth2'
-# gem 'omniauth-weibo-oauth2'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
